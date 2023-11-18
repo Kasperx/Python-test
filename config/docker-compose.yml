@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  db:
+    image: mariadb:10.10
+    container_name: mariadb_python_test
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+    networks:
+      - my-network
+networks:
+  my-network:
