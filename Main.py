@@ -1,7 +1,8 @@
 
 import Controller
 import Person
-import Database
+#import Database_sqlite
+import Database_mariadb
 
 print("###\n")
 controller: Controller = Controller.Controller
@@ -11,7 +12,6 @@ print("###\n")
 persons: [Person] = controller.createPerson(5)
 person.show(persons)
 print("###\n")
-db: Database = Database
-db.create_connection(None)
-db.create_database()
-db.insert_data(persons)
+db: Database_mariadb = Database_mariadb
+db.create_database_and_table()
+#db.insert_data(persons)
